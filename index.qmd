@@ -1,14 +1,14 @@
 ---
-title: "Your Name"
+title: "Abbi Morgan"
 toc: false
-image: "your photo.jpg"
+image: "C:/AbbiMorgan_IntroR/6fe9dd67-302a-4511-9e21-adfba4333d0a.jpg"
 about:
   template: trestles
   links:
   - text: GitHub
-    href: link
+    href: https://github.com/amorgan-140
   - text: email
-    href:  link
+    href:  abigail-morgan@ou.edu
 ---
 
 ::: {.columnpage}
@@ -21,10 +21,10 @@ Welcome to my research profile website. I'm a student in the Intro to Reproducib
 
 Replace this section with information about yourself:
 
-- **Name:** Your Name Here
-- **Institution:** Your University
+- **Name:** Abbi Morgan
+- **Institution:** University of Oklahoma Health Campus
 - **Research Interests:** Add your research interests here
-- **Email:** your.email@university.edu
+- **Email:** abigail-morgan@ou.edu
 
 ## My Research
 

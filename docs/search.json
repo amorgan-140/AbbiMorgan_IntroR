@@ -1,0 +1,156 @@
+[
+  {
+    "objectID": "SETUP.html",
+    "href": "SETUP.html",
+    "title": "Setup Instructions for Students",
+    "section": "",
+    "text": "Follow these steps to set up and publish your research website.\n\n\nBefore you begin, make sure you have the following:\n\nA GitHub account (free at github.com)\nGitHub Desktop installed on your computer\nR and RStudio\n\n\n\n\n\n\n\nClick the “Use this template” button.\nSelect Create a new repository.\nUse the Owner dropdown menu to select your github user\nName the repository. This will be in your web address! Choose something professional like your name.\nClick Create repository from template.\nYou should now have this newly created repository on your own GitHub.\n\n\n\n\n\nOn your computer: Make sure the GitHub Desktop is open.\nOn GitHub: In your own repository on GitHub, Click the “&lt;&gt; Code” button.\nSelect Open with GitHub Desktop.\nChoose a local path for the placement of the directory (not a cloud service). For example: (/Users/YourUserame/GitHub/introR2026)\nSelect Clone.\n\n\n\n\n\n[!IMPORTANT] 1. Open RStudio 2. Create a new Rproj file in the existing local directory of your repository 3. Open .Rproj file 4. Edit the following files in RStudio\n\n\n\n\nReplace “Your Name” with your name.\nUpdate the About Me section.\nAdd your research interests.\nReplace “your photo.jpg” with the filename of a photo of yourself & by adding the photo to the directory.\nUpdate places that say “link” with the correct internet link or email address, if desired.\n\n\n\n\n\nUpdate the descriptions of your projects.\nAdd links to additional projects as you create them.\n\n\n\n\n\nChange the title to your project title.\nWrite your final report.\nReplace all placeholder text with your own content.\n\n\n\n\nstyles.css * Customize colors, fonts, and other styling options if desired.\n_quarto.yml * add new links to the navbar\nREADME.md * This is a place to add information to the GitHub reponsitory, but will not be displayed on your rendered website.\n.gitignore * List files here you don’t want synced to GitHub. For example, if you want to keep your data.csv files local and not online list them here\nSETUP.md * These are instructions to create this site. No need to modify this file.\n\n\n\n\nIn RStudio, you can preview your website before publishing.\nRun the following command in the RStudio Terminal:\nquarto preview\nTo render the website before pushing your changes, run:\nquarto render\n\n\n\nWhen you are satisfied with your changes:\n\nOpen GitHub Desktop.\nReview the files you modified.\nEnter a commit summary and an optional description.\nClick Commit to main.\nClick Push origin to upload your changes to GitHub.\n\n\n\n\n\nGo to your repository on GitHub.\nClick Settings.\nSelect Pages from the left sidebar.\nUnder Build and deployment:\n\nSource: Select Deploy from a branch.\nBranch: Select main.\nFolder: Select /docs.\n\nClick Save.\n\n\n\n\n\nWait 1–2 minutes for GitHub to deploy your site.\nReturn to Settings → Pages.\nYou should see a URL similar to:\nhttps://YOUR-USERNAME.github.io/YOUR-REPOSITORY/\nClick the link to view your website.\n\n\n\n\n\nWhenever you want to update your website:\n\nEdit your .qmd files.\nCommit and push your changes using GitHub Desktop.\nWait 1–2 minutes for GitHub Pages to rebuild your site.\nRefresh your browser to view the updated website.\n\n\n\n\nIf your website is not updating:\n\nGo to your GitHub repository.\nClick the Actions tab.\nOpen the most recent workflow run.\nReview any error messages if the build failed.\n\n\n\n\n\n\n\nGo to Settings → Pages.\nConfirm that:\n\nThe branch is set to main.\nThe folder is set to /docs.\n\nYour website URL should appear on this page after deployment.\n\n\n\n\nAlways use forward slashes (/) in links, even when using Windows.\n# Correct\n[Link](projects/final-report.qmd)\n\n# Incorrect\n[Link](projects\\final-report.qmd)\n\n\n\n\nTo add another page, such as a poster, publication, or additional project:\n\nCreate a new .qmd file in the projects/ folder.\nEdit projects.qmd and add a link to the new page.\nCommit and push your changes.\nWait 1–2 minutes for GitHub Pages to update your website.\n\n\n\n\n\nQuarto Documentation\nGitHub Pages Documentation\nMarkdown Guide\nGit Basics\n\n\nNeed help? Contact your instructor or refer to the resources listed above."
+  },
+  {
+    "objectID": "SETUP.html#prerequisites",
+    "href": "SETUP.html#prerequisites",
+    "title": "Setup Instructions for Students",
+    "section": "",
+    "text": "Before you begin, make sure you have the following:\n\nA GitHub account (free at github.com)\nGitHub Desktop installed on your computer\nR and RStudio"
+  },
+  {
+    "objectID": "SETUP.html#step-by-step-setup",
+    "href": "SETUP.html#step-by-step-setup",
+    "title": "Setup Instructions for Students",
+    "section": "",
+    "text": "Click the “Use this template” button.\nSelect Create a new repository.\nUse the Owner dropdown menu to select your github user\nName the repository. This will be in your web address! Choose something professional like your name.\nClick Create repository from template.\nYou should now have this newly created repository on your own GitHub.\n\n\n\n\n\nOn your computer: Make sure the GitHub Desktop is open.\nOn GitHub: In your own repository on GitHub, Click the “&lt;&gt; Code” button.\nSelect Open with GitHub Desktop.\nChoose a local path for the placement of the directory (not a cloud service). For example: (/Users/YourUserame/GitHub/introR2026)\nSelect Clone.\n\n\n\n\n\n[!IMPORTANT] 1. Open RStudio 2. Create a new Rproj file in the existing local directory of your repository 3. Open .Rproj file 4. Edit the following files in RStudio\n\n\n\n\nReplace “Your Name” with your name.\nUpdate the About Me section.\nAdd your research interests.\nReplace “your photo.jpg” with the filename of a photo of yourself & by adding the photo to the directory.\nUpdate places that say “link” with the correct internet link or email address, if desired.\n\n\n\n\n\nUpdate the descriptions of your projects.\nAdd links to additional projects as you create them.\n\n\n\n\n\nChange the title to your project title.\nWrite your final report.\nReplace all placeholder text with your own content.\n\n\n\n\nstyles.css * Customize colors, fonts, and other styling options if desired.\n_quarto.yml * add new links to the navbar\nREADME.md * This is a place to add information to the GitHub reponsitory, but will not be displayed on your rendered website.\n.gitignore * List files here you don’t want synced to GitHub. For example, if you want to keep your data.csv files local and not online list them here\nSETUP.md * These are instructions to create this site. No need to modify this file.\n\n\n\n\nIn RStudio, you can preview your website before publishing.\nRun the following command in the RStudio Terminal:\nquarto preview\nTo render the website before pushing your changes, run:\nquarto render\n\n\n\nWhen you are satisfied with your changes:\n\nOpen GitHub Desktop.\nReview the files you modified.\nEnter a commit summary and an optional description.\nClick Commit to main.\nClick Push origin to upload your changes to GitHub.\n\n\n\n\n\nGo to your repository on GitHub.\nClick Settings.\nSelect Pages from the left sidebar.\nUnder Build and deployment:\n\nSource: Select Deploy from a branch.\nBranch: Select main.\nFolder: Select /docs.\n\nClick Save.\n\n\n\n\n\nWait 1–2 minutes for GitHub to deploy your site.\nReturn to Settings → Pages.\nYou should see a URL similar to:\nhttps://YOUR-USERNAME.github.io/YOUR-REPOSITORY/\nClick the link to view your website."
+  },
+  {
+    "objectID": "SETUP.html#updating-your-website",
+    "href": "SETUP.html#updating-your-website",
+    "title": "Setup Instructions for Students",
+    "section": "",
+    "text": "Whenever you want to update your website:\n\nEdit your .qmd files.\nCommit and push your changes using GitHub Desktop.\nWait 1–2 minutes for GitHub Pages to rebuild your site.\nRefresh your browser to view the updated website."
+  },
+  {
+    "objectID": "SETUP.html#checking-the-build-status",
+    "href": "SETUP.html#checking-the-build-status",
+    "title": "Setup Instructions for Students",
+    "section": "",
+    "text": "If your website is not updating:\n\nGo to your GitHub repository.\nClick the Actions tab.\nOpen the most recent workflow run.\nReview any error messages if the build failed."
+  },
+  {
+    "objectID": "SETUP.html#troubleshooting",
+    "href": "SETUP.html#troubleshooting",
+    "title": "Setup Instructions for Students",
+    "section": "",
+    "text": "Go to Settings → Pages.\nConfirm that:\n\nThe branch is set to main.\nThe folder is set to /docs.\n\nYour website URL should appear on this page after deployment.\n\n\n\n\nAlways use forward slashes (/) in links, even when using Windows.\n# Correct\n[Link](projects/final-report.qmd)\n\n# Incorrect\n[Link](projects\\final-report.qmd)"
+  },
+  {
+    "objectID": "SETUP.html#adding-more-pages",
+    "href": "SETUP.html#adding-more-pages",
+    "title": "Setup Instructions for Students",
+    "section": "",
+    "text": "To add another page, such as a poster, publication, or additional project:\n\nCreate a new .qmd file in the projects/ folder.\nEdit projects.qmd and add a link to the new page.\nCommit and push your changes.\nWait 1–2 minutes for GitHub Pages to update your website."
+  },
+  {
+    "objectID": "SETUP.html#resources",
+    "href": "SETUP.html#resources",
+    "title": "Setup Instructions for Students",
+    "section": "",
+    "text": "Quarto Documentation\nGitHub Pages Documentation\nMarkdown Guide\nGit Basics\n\n\nNeed help? Contact your instructor or refer to the resources listed above."
+  },
+  {
+    "objectID": "projects/final-report.html",
+    "href": "projects/final-report.html",
+    "title": "Final Report: [Your Project Title]",
+    "section": "",
+    "text": "Replace this with an introduction to your research question or project. What are you investigating? Why does it matter?\n\n\n\nDescribe how you conducted your analysis. What data did you use? What analyses did you perform?\n\n\n\nShare your findings here. You can include:\n\nText explanations\nTables\nFigures and visualizations\nCode examples (if relevant)\n\n\n\nHere’s a sample R code block:\n\n# Load a library\nlibrary(ggplot2)\n\nWarning: package 'ggplot2' was built under R version 4.5.3\n\n# Create some sample data\ndata &lt;- data.frame(\n  x = 1:10,\n  y = rnorm(10)\n)\n\n# Make a plot\nplot(data$x, data$y)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMethod\nResult\nP-value\n\n\n\n\nAnalysis 1\nSignificant\n0.01\n\n\nAnalysis 2\nNot Significant\n0.15\n\n\n\n\n\n\n\nWhat do your results mean? How do they relate to your research question? What limitations exist? What would you do next?\n\n\n\nSummarize your findings and their implications.\n\n\n\nAdd any references to papers, data sources, or resources you used.\n\nLast updated: June 2026"
+  },
+  {
+    "objectID": "projects/final-report.html#introduction",
+    "href": "projects/final-report.html#introduction",
+    "title": "Final Report: [Your Project Title]",
+    "section": "",
+    "text": "Replace this with an introduction to your research question or project. What are you investigating? Why does it matter?"
+  },
+  {
+    "objectID": "projects/final-report.html#methods",
+    "href": "projects/final-report.html#methods",
+    "title": "Final Report: [Your Project Title]",
+    "section": "",
+    "text": "Describe how you conducted your analysis. What data did you use? What analyses did you perform?"
+  },
+  {
+    "objectID": "projects/final-report.html#results",
+    "href": "projects/final-report.html#results",
+    "title": "Final Report: [Your Project Title]",
+    "section": "",
+    "text": "Share your findings here. You can include:\n\nText explanations\nTables\nFigures and visualizations\nCode examples (if relevant)\n\n\n\nHere’s a sample R code block:\n\n# Load a library\nlibrary(ggplot2)\n\nWarning: package 'ggplot2' was built under R version 4.5.3\n\n# Create some sample data\ndata &lt;- data.frame(\n  x = 1:10,\n  y = rnorm(10)\n)\n\n# Make a plot\nplot(data$x, data$y)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMethod\nResult\nP-value\n\n\n\n\nAnalysis 1\nSignificant\n0.01\n\n\nAnalysis 2\nNot Significant\n0.15"
+  },
+  {
+    "objectID": "projects/final-report.html#discussion",
+    "href": "projects/final-report.html#discussion",
+    "title": "Final Report: [Your Project Title]",
+    "section": "",
+    "text": "What do your results mean? How do they relate to your research question? What limitations exist? What would you do next?"
+  },
+  {
+    "objectID": "projects/final-report.html#conclusions",
+    "href": "projects/final-report.html#conclusions",
+    "title": "Final Report: [Your Project Title]",
+    "section": "",
+    "text": "Summarize your findings and their implications."
+  },
+  {
+    "objectID": "projects/final-report.html#references",
+    "href": "projects/final-report.html#references",
+    "title": "Final Report: [Your Project Title]",
+    "section": "",
+    "text": "Add any references to papers, data sources, or resources you used.\n\nLast updated: June 2026"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Abbi Morgan",
+    "section": "",
+    "text": "Welcome to my research profile website. I’m a student in the Intro to Reproducible Data Analysis Using R course.\n\n\nReplace this section with information about yourself:\n\nName: Abbi Morgan\nInstitution: University of Oklahoma Health Campus\nResearch Interests: Add your research interests here\nEmail: abigail-morgan@ou.edu\n\n\n\n\nI’m interested in understanding [your topic area]. Through this course, I’ve learned how to:\n\nUse R for data analysis\nCreate reproducible research workflows\nBuild websites to share my work\nManage my research projects with Git and GitHub\n\n\n\n\nThis site showcases my research and projects. Check out my Projects page to see my final report and other work!\nAs my research progresses, I’ll continue adding:\n\nPublications\nConference posters\nNew analyses and projects\nAdditional resources\n\n\nKeep exploring! Navigate using the menu above."
+  },
+  {
+    "objectID": "index.html#about-me",
+    "href": "index.html#about-me",
+    "title": "Abbi Morgan",
+    "section": "",
+    "text": "Replace this section with information about yourself:\n\nName: Abbi Morgan\nInstitution: University of Oklahoma Health Campus\nResearch Interests: Add your research interests here\nEmail: abigail-morgan@ou.edu"
+  },
+  {
+    "objectID": "index.html#my-research",
+    "href": "index.html#my-research",
+    "title": "Abbi Morgan",
+    "section": "",
+    "text": "I’m interested in understanding [your topic area]. Through this course, I’ve learned how to:\n\nUse R for data analysis\nCreate reproducible research workflows\nBuild websites to share my work\nManage my research projects with Git and GitHub"
+  },
+  {
+    "objectID": "index.html#this-website",
+    "href": "index.html#this-website",
+    "title": "Abbi Morgan",
+    "section": "",
+    "text": "This site showcases my research and projects. Check out my Projects page to see my final report and other work!\nAs my research progresses, I’ll continue adding:\n\nPublications\nConference posters\nNew analyses and projects\nAdditional resources\n\n\nKeep exploring! Navigate using the menu above."
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Here are my research projects and work:\n\n\nMy final project for CELL 6351 - Intro to Reproducible Data Analysis Using R.\nView Final Report →\n\n\n\n\nAs you continue your research journey, you can add more pages here! For example:\n\nConference posters\nPublications\nData visualizations\nAnalysis write-ups\nProject proposals\n\nTo add a new project:\n\nCreate a new .qmd file in the projects/ folder\nAdd a link to it on this page\nPush to GitHub and your site updates automatically!"
+  },
+  {
+    "objectID": "projects.html#final-report",
+    "href": "projects.html#final-report",
+    "title": "Projects",
+    "section": "",
+    "text": "My final project for CELL 6351 - Intro to Reproducible Data Analysis Using R.\nView Final Report →"
+  },
+  {
+    "objectID": "projects.html#adding-more-projects",
+    "href": "projects.html#adding-more-projects",
+    "title": "Projects",
+    "section": "",
+    "text": "As you continue your research journey, you can add more pages here! For example:\n\nConference posters\nPublications\nData visualizations\nAnalysis write-ups\nProject proposals\n\nTo add a new project:\n\nCreate a new .qmd file in the projects/ folder\nAdd a link to it on this page\nPush to GitHub and your site updates automatically!"
+  }
+]
