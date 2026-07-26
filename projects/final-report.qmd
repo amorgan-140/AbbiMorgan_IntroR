@@ -1,0 +1,65 @@
+---
+title: "Final Report: [Your Project Title]"
+date: 2026-06-04
+author: "Your Name"
+---
+
+# Final Report: [Your Project Title]
+
+## Introduction
+
+Replace this with an introduction to your research question or project. What are you investigating? Why does it matter?
+
+## Methods
+
+Describe how you conducted your analysis. What data did you use? What analyses did you perform?
+
+## Results
+
+Share your findings here. You can include:
+
+- Text explanations
+- Tables
+- Figures and visualizations
+- Code examples (if relevant)
+
+### Example Code Block
+
+Here's a sample R code block:
+
+```{r}
+# Load a library
+library(ggplot2)
+
+# Create some sample data
+data <- data.frame(
+  x = 1:10,
+  y = rnorm(10)
+)
+
+# Make a plot
+plot(data$x, data$y)
+```
+
+### Example Table
+
+| Method | Result | P-value |
+|--------|--------|---------|
+| Analysis 1 | Significant | 0.01 |
+| Analysis 2 | Not Significant | 0.15 |
+
+## Discussion
+
+What do your results mean? How do they relate to your research question? What limitations exist? What would you do next?
+
+## Conclusions
+
+Summarize your findings and their implications.
+
+## References
+
+Add any references to papers, data sources, or resources you used.
+
+---
+
+**Last updated:** June 2026

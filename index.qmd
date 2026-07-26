@@ -1,0 +1,51 @@
+---
+title: "Your Name"
+toc: false
+image: "your photo.jpg"
+about:
+  template: trestles
+  links:
+  - text: GitHub
+    href: link
+  - text: email
+    href:  link
+---
+
+::: {.columnpage}
+
+# Hello! 👋
+
+Welcome to my research profile website. I'm a student in the Intro to Reproducible Data Analysis Using R course.
+
+## About Me
+
+Replace this section with information about yourself:
+
+- **Name:** Your Name Here
+- **Institution:** Your University
+- **Research Interests:** Add your research interests here
+- **Email:** your.email@university.edu
+
+## My Research
+
+I'm interested in understanding [your topic area]. Through this course, I've learned how to:
+
+- Use R for data analysis
+- Create reproducible research workflows
+- Build websites to share my work
+- Manage my research projects with Git and GitHub
+
+## This Website
+
+This site showcases my research and projects. Check out my **Projects** page to see my final report and other work!
+
+As my research progresses, I'll continue adding:
+
+- Publications
+- Conference posters
+- New analyses and projects
+- Additional resources
+
+---
+
+**Keep exploring!** Navigate using the menu above.

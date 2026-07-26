@@ -1,0 +1,32 @@
+project:
+  type: website
+  execute-dir: file
+  output-dir: docs
+
+website:
+  title: "My Research Profile"
+  navbar:
+    search: false
+    right:
+      - icon: house-fill
+        text: "Home"
+        href: index.qmd
+      - icon: briefcase-fill
+        text: "Projects"
+        href: projects.qmd
+      - icon: github
+        text: "GitHub"
+        href: https://github.com
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    css: styles.css
+    code-overflow: wrap
+    footer: "© 2026 My Research Profile | Built with Quarto"
+
+editor: source
+
+execute:
+  freeze: auto
