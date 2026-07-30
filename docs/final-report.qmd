@@ -3,7 +3,6 @@ title: "Intro to R Final"
 date: 2026-07-31
 author: "Abbi Morgan"
 body-classes: rclassproject
-format: html
 ---
 
 # Coffee Trends in the US
