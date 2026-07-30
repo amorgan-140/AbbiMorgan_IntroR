@@ -167,9 +167,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#coffee-trends-in-the-us" id="toc-coffee-trends-in-the-us" class="nav-link active" data-scroll-target="#coffee-trends-in-the-us">Coffee Trends in the US</a>
   <ul class="collapse">
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#libraries" id="toc-libraries" class="nav-link" data-scroll-target="#libraries">Libraries</a>
+  <li><a href="#coding-fun" id="toc-coding-fun" class="nav-link" data-scroll-target="#coding-fun">Coding Fun!</a>
   <ul class="collapse">
+  <li><a href="#libraries" id="toc-libraries" class="nav-link" data-scroll-target="#libraries">Libraries</a></li>
   <li><a href="#organize-the-data" id="toc-organize-the-data" class="nav-link" data-scroll-target="#organize-the-data">Organize the data</a></li>
+  </ul></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
+  <ul class="collapse">
+  <li><a href="#first-lets-look-at-how-different-genders-like-to-brew-their-coffee" id="toc-first-lets-look-at-how-different-genders-like-to-brew-their-coffee" class="nav-link" data-scroll-target="#first-lets-look-at-how-different-genders-like-to-brew-their-coffee">1. First let’s look at how different genders like to brew their coffee</a></li>
   <li><a href="#example-table" id="toc-example-table" class="nav-link" data-scroll-target="#example-table">Example Table</a></li>
   </ul></li>
   <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
@@ -224,8 +229,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </section>
-<section id="libraries" class="level2">
-<h2 class="anchored" data-anchor-id="libraries">Libraries</h2>
+<section id="coding-fun" class="level2">
+<h2 class="anchored" data-anchor-id="coding-fun">Coding Fun!</h2>
+<section id="libraries" class="level3">
+<h3 class="anchored" data-anchor-id="libraries">Libraries</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
@@ -272,45 +279,161 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tools)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'janitor' was built under R version 4.5.3</code></pre>
 </div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'janitor'
+
+The following objects are masked from 'package:stats':
+
+    chisq.test, fisher.test</code></pre>
+</div>
+</div>
+</section>
 <section id="organize-the-data" class="level3">
 <h3 class="anchored" data-anchor-id="organize-the-data">Organize the data</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>data_path <span class="ot">&lt;-</span> <span class="st">"data"</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>csv_files <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">path =</span> data_path, <span class="at">pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">.csv$"</span>, <span class="at">full.names =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (file <span class="cf">in</span> csv_files) {</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  df_name <span class="ot">&lt;-</span> tools<span class="sc">::</span><span class="fu">file_path_sans_ext</span>(<span class="fu">basename</span>(file))</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(file) <span class="sc">%&gt;%</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename_with</span>(<span class="sc">~</span> <span class="fu">str_replace_all</span>(.x, <span class="st">"_"</span>, <span class="st">" "</span>))</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">assign</span>(df_name, df, <span class="at">envir =</span> .GlobalEnv)</span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>data_path <span class="ot">&lt;-</span> <span class="st">"data"</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>csv_files <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">path =</span> data_path, <span class="at">pattern =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">.csv$"</span>, <span class="at">full.names =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (file <span class="cf">in</span> csv_files) {</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  df_name <span class="ot">&lt;-</span> tools<span class="sc">::</span><span class="fu">file_path_sans_ext</span>(<span class="fu">basename</span>(file))</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(file) <span class="sc">%&gt;%</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename_with</span>(<span class="sc">~</span> <span class="fu">str_replace_all</span>(.x, <span class="st">"_"</span>, <span class="st">" "</span>))</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">assign</span>(df_name, df, <span class="at">envir =</span> .GlobalEnv)</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Take a look at the data output</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load a library</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create some sample data</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">rnorm</span>(<span class="dv">10</span>)</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a plot</span></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(data<span class="sc">$</span>x, data<span class="sc">$</span>y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="final-report_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<section id="first-lets-look-at-how-different-genders-like-to-brew-their-coffee" class="level3">
+<h3 class="anchored" data-anchor-id="first-lets-look-at-how-different-genders-like-to-brew-their-coffee">1. First let’s look at how different genders like to brew their coffee</h3>
+<pre class="{# Count responses for any categorical column (ignore NA)}"><code>count_by_category &lt;- function(df, column) {
+  df %&gt;%
+    drop_na({{ column }}) %&gt;%
+    group_by({{ column }}) %&gt;%
+    summarize(n = n()) %&gt;%
+    arrange(desc(n))
+}
+
+# Summarize checkbox-style logical columns (TRUE/FALSE)
+summarize_checkboxes &lt;- function(df, pattern) {
+  df %&gt;%
+    summarize(across(matches(pattern), ~ sum(.x, na.rm = TRUE))) %&gt;%
+    pivot_longer(everything(), names_to = "option", values_to = "count") %&gt;%
+    arrange(desc(count))
+}
+
+# Convert checkbox columns into long format for plotting (ignore NA)
+checkbox_long &lt;- function(df, pattern) {
+  df %&gt;%
+    pivot_longer(
+      cols = matches(pattern),
+      names_to = "option",
+      values_to = "selected"
+    ) %&gt;%
+    filter(selected == TRUE) %&gt;%
+    count(option, sort = TRUE)
+}
+
+
+# ANALYSIS: Gender × Brew Method
+
+brew_by_gender &lt;- GACTT_RESULTS_ANONYMIZED_v2 %&gt;%
+  pivot_longer(
+    cols = matches("^How do you brew coffee at home\\? \\("),
+    names_to = "brew_method",
+    values_to = "selected"
+  ) %&gt;%
+  filter(selected == TRUE) %&gt;%      # keep TRUE selections only
+  drop_na(Gender) %&gt;%               # remove NA gender
+  count(Gender, brew_method, sort = TRUE)
+
+
+# Clean brew method labels (extract text inside parentheses)
+brew_by_gender &lt;- brew_by_gender %&gt;%
+  mutate(
+    brew_method = str_extract(brew_method, "\\((.*)\\)") %&gt;%
+      str_remove_all("[()]")
+  )
+
+# Combine "Other" + "Prefer not to say"
+GACTT_RESULTS_ANONYMIZED_v2 &lt;- GACTT_RESULTS_ANONYMIZED_v2 %&gt;%
+  mutate(
+    Gender = case_when(
+      Gender %in% c("Other (please specify)", "Prefer not to say") ~ "Other / Prefer not to say",
+      TRUE ~ Gender
+    )
+  )
+
+# PLOT
+
+p &lt;- brew_by_gender %&gt;%
+  ggplot(aes(x = brew_method, y = n, fill = Gender)) +
+  geom_col(position = "dodge") +
+  theme_minimal() +
+  labs(
+    title = "Brew method vs. Gender",
+    x = "Brew Method",
+    y = "Count"
+  ) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+print(p)
+
+brew_donut &lt;- brew_by_gender %&gt;%
+  group_by(Gender) %&gt;%
+  mutate(
+    percent = n / sum(n) * 100
+  )
+
+ggplot(brew_donut, aes(x = 2, y = percent, fill = brew_method)) +
+  geom_col(color = "white") +
+  coord_polar(theta = "y") +
+  facet_wrap(~ Gender) +
+  xlim(0.5, 2.5) +   # creates the donut hole
+  theme_void() +
+  labs(
+    title = "How People Brew Coffee at Home, by Gender",
+    fill = "Brew Method"
+  ) +
+  theme(
+    strip.text = element_text(size = 14, face = "bold"),
+    plot.title = element_text(size = 16, face = "bold", hjust = 0.5)
+  )
+
+# ranks the categories
+brew_ranked &lt;- brew_by_gender %&gt;%
+  group_by(Gender) %&gt;%
+  arrange(Gender, desc(n)) %&gt;%
+  mutate(
+    rank = row_number(),
+    percent = round(n / sum(n) * 100, 1)
+  ) %&gt;%
+  select(rank, Gender, brew_method, n, percent)
+
+brew_ranked
+
+# Gives a summary of the data
+brew_summary_wide &lt;- brew_by_gender %&gt;%
+  pivot_wider(
+    names_from = Gender,
+    values_from = n,
+    values_fill = 0
+  )
+
+brew_summary_wide</code></pre>
 </section>
 <section id="example-table" class="level3">
 <h3 class="anchored" data-anchor-id="example-table">Example Table</h3>

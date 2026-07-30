@@ -2,7 +2,7 @@
 
 /* Main content styling */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Arial', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
 }
 
@@ -23,6 +23,12 @@ a:hover {
   color: #2980b9;
 }
 
+
+.rclassproject{
+  background-color: #E6E6FA;
+}
+
+
 /* Code blocks */
 code {
   background-color: #f4f4f4;
@@ -35,6 +41,14 @@ pre {
   padding: 1em;
   border-radius: 5px;
   overflow-x: auto;
+}
+
+pre, .sourceCode {
+  background-color: #FFF5F8;
+  padding: 1em;
+  border-radius: 5px;
+  overflow-x: auto;
+  border: 1px solid #F48FB1;
 }
 
 /* Tables */
@@ -67,4 +81,11 @@ blockquote {
   color: #666;
   font-style: italic;
   margin: 1em 0;
+}
+
+
+/* Change top header color */
+.navbar {
+  background-color: #F4C2C2;
+  padding-top: 15px;
 }

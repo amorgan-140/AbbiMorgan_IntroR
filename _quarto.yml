@@ -4,7 +4,7 @@ project:
   output-dir: docs
 
 website:
-  title: "My Research Profile"
+  title: "Abbi Morgan"
   navbar:
     search: false
     right:
@@ -17,6 +17,9 @@ website:
       - icon: github
         text: "GitHub"
         href: https://github.com
+      - icon: linkedin
+        text: "Linkedin"
+        href: https://www.linkedin.com/in/abigail-morgan-2532a51bb/
 
 format:
   html:

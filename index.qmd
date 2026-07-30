@@ -1,7 +1,7 @@
 ---
 title: "Abbi Morgan"
 toc: false
-image: "C:/AbbiMorgan_IntroR/6fe9dd67-302a-4511-9e21-adfba4333d0a.jpg"
+image: "Me.jpg"
 about:
   template: trestles
   links:
@@ -49,3 +49,10 @@ As my research progresses, I'll continue adding:
 ---
 
 **Keep exploring!** Navigate using the menu above.
+
+
+
+
+
+
+
