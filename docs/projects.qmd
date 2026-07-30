@@ -1,0 +1,11 @@
+---
+title: "Projects"
+---
+
+## Final Report
+
+My final project for CELL 6351 - Intro to Reproducible Data Analysis Using R.
+
+[**View Final Report** →](projects/final-report.qmd)
+
+---
